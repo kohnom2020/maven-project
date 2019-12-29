@@ -1,5 +1,5 @@
 pipeline {
-   agent {label 'ctp-docker-node1'}
+   agent {label 'centos7-02'}
    stages{
       stage('Build'){
          steps{
@@ -10,7 +10,7 @@ pipeline {
       stage('Deployment'){
          steps{
             sh "docker rm -vf tomcatapp || true"
-            sh "docker run -d -p 8085:8080 --name tomcatapp tomcatwebapp:${env.BUILD_ID}"
+            sh "docker run -d -p 8090:8080 --name tomcatapp tomcatwebapp:${env.BUILD_ID}"
          }
       }
    }
