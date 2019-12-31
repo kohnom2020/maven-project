@@ -13,6 +13,9 @@ pipeline {
             sh "docker run -d -p 8090:8080 --name tomcatapp tomcatwebapp:${env.BUILD_ID}"
          }
       }
+     stage('Email'){
+        emailext body: 'Build run complete!', subject: 'Jenkins Build Complete!', to: 'kohn.om@gmail.com'
+     }
    }
 }
  
