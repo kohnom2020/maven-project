@@ -17,7 +17,7 @@ pipeline {
    post {
       always {
          mail to: 'kohn.om@gmail.com',
-            subject: "Status of pipeline: ${currentBuild.fullDisplayName}",
+            subject: "Build Status: ${currentBuild.fullDisplayName} - ${currentBuild.result}",
             body: "${env.BUILD_URL} has result ${currentBuild.result}"
       }  
    }
