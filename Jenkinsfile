@@ -9,7 +9,7 @@ pipeline {
       }
       stage('Deployment'){
          steps{
-            sh "docker rm -vf tomcatapp || true"
+            sh "docker rm -vf tomcatappp || true"
             sh "docker run -d -p 8090:8080 --name tomcatapp tomcatwebapp:${env.BUILD_ID}"
          }
       }
