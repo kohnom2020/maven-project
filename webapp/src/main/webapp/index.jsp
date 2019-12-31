@@ -1,1 +1,1 @@
-Successfully built a Java App running in Docker - v1.2
+Successfully built a Java App running in Docker - v1.3
