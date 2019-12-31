@@ -13,6 +13,7 @@ pipeline {
             sh "docker run -d -p 8090:8080 --name tomcatapp tomcatwebapp:${env.BUILD_ID}"
          }
       }
+   }
    post {
       always {
          mail to: 'kohn.om@gmail.com',
